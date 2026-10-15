@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  body {
+    background-color: #060913;
+    color: #dee2f4;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Subtle Technical Architectural Grid */
+.bg-grid-tech {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
+}
+
+/* Radial Soft Focus Glow */
+.radial-center-glow {
+  background: radial-gradient(circle at 50% 40%, rgba(56, 189, 248, 0.09) 0%, rgba(14, 19, 31, 0) 70%);
+}
+
+/* Glow effects */
+.glow-cyan-sm {
+  box-shadow: 0 0 16px -2px rgba(56, 189, 248, 0.3);
+}
+
+.glow-cyan-md {
+  box-shadow: 0 0 32px -4px rgba(56, 189, 248, 0.25);
+}
+
+.glow-cyan-lg {
+  box-shadow: 0 0 48px -6px rgba(56, 189, 248, 0.2);
+}
