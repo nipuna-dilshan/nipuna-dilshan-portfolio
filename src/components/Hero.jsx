@@ -66,7 +66,7 @@ export default function Hero() {
             {/* Primary Action: LinkedIn */}
             <a
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3 bg-[#38bdf8] text-slate-950 font-mono text-[11px] font-semibold rounded hover:bg-sky-300 hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(56,189,248,0.35)] transition-all duration-200 active:scale-95 shadow-sm whitespace-nowrap"
-              href="https://www.linkedin.com/in/nipuna-dilshan/"
+              href="https://www.linkedin.com/in/ndilshan/"
               rel="noopener noreferrer"
               target="_blank"
             >
