@@ -1,36 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <defs>
-    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8" />
-      <stop offset="50%" stop-color="#60a5fa" />
-      <stop offset="100%" stop-color="#0284c7" />
-    </linearGradient>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b1329" />
-      <stop offset="100%" stop-color="#060913" />
-    </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="2.5" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-  </defs>
+  <!-- Rounded Charcoal Container -->
+  <rect width="64" height="64" rx="16" fill="#14171A" stroke="#282B30" stroke-width="1.5" />
 
-  <!-- Container with subtle border -->
-  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgGrad)" stroke="#38bdf8" stroke-opacity="0.35" stroke-width="2" />
-  
-  <!-- Subtle inner ambient circle glow -->
-  <circle cx="32" cy="32" r="18" fill="#38bdf8" fill-opacity="0.12" />
-
-  <!-- Letter N - Sharp, modern geometric typography -->
-  <path 
-    d="M 18 47 V 17 H 24.5 L 39.5 39.5 V 17 H 46 V 47 H 39.5 L 24.5 24.5 V 47 Z" 
-    fill="url(#neonGlow)" 
-    filter="url(#glow)"
+  <!-- Monogram N (Sharp modern geometric path) -->
+  <path
+    d="M 14 18 H 21.5 L 34.5 38.5 V 18 H 42 V 46 H 34.5 L 21.5 25.5 V 46 H 14 Z"
+    fill="#FFFFFF"
   />
 
-  <!-- Subtle corner accent dot -->
-  <circle cx="48" cy="15" r="2" fill="#38bdf8" />
+  <!-- Signature Orange Dot -->
+  <circle cx="47.5" cy="42.5" r="3.5" fill="#F47745" />
 </svg>
