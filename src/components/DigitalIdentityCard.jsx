@@ -58,12 +58,12 @@ export default function DigitalIdentityCard() {
 
   return (
     <div
-      className="relative w-full max-w-[380px] sm:max-w-[400px] lg:max-w-[420px] mx-auto lg:mx-0 lg:ml-auto lg:mr-0"
+      className="relative w-full max-w-95 sm:max-w-100 lg:max-w-105 mx-auto lg:mx-0 lg:ml-auto lg:mr-0"
       style={{ perspective: "1200px" }}
     >
       {/* Back Ambient Orange Halo */}
       <div
-        className="pointer-events-none absolute -inset-4 rounded-[32px] opacity-25 blur-2xl"
+        className="pointer-events-none absolute -inset-4 rounded-4xl opacity-25 blur-2xl"
         style={{
           background:
             "radial-gradient(circle at 50% 20%, rgba(244, 119, 69, 0.38), transparent 70%)",
@@ -76,7 +76,7 @@ export default function DigitalIdentityCard() {
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative rounded-[28px] bg-white/[0.04] backdrop-blur-2xl border border-[#343434] p-5 sm:p-6 shadow-[0_28px_70px_rgba(0,0,0,0.65)] overflow-hidden"
+        className="relative rounded-[28px] bg-white/4 backdrop-blur-2xl border border-[#343434] p-5 sm:p-6 shadow-[0_28px_70px_rgba(0,0,0,0.65)] overflow-hidden"
         style={{
           transform: isInteractive
             ? `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`
@@ -89,7 +89,7 @@ export default function DigitalIdentityCard() {
       >
         {/* Top Orange Light Rim */}
         <div
-          className="absolute top-0 left-8 right-8 h-[1.5px] bg-gradient-to-r from-transparent via-[#F47745] to-transparent opacity-80"
+          className="absolute top-0 left-8 right-8 h-[1.5px] bg-linear-to-r from-transparent via-[#F47745] to-transparent opacity-80"
           aria-hidden="true"
         />
 
@@ -142,7 +142,7 @@ export default function DigitalIdentityCard() {
 
               {/* Minimalist Shoulder Silhouette Curve */}
               <svg
-                className="absolute -bottom-2 w-48 h-32 text-white/[0.04] pointer-events-none"
+                className="absolute -bottom-2 w-48 h-32 text-white/4 pointer-events-none"
                 viewBox="0 0 200 120"
                 fill="currentColor"
                 aria-hidden="true"
@@ -178,7 +178,7 @@ export default function DigitalIdentityCard() {
               Nipuna Dilshan
             </h3>
             <p className="text-[#F47745] font-medium text-sm sm:text-base mt-0.5">
-              AI Solution Engineer
+              AI Solutions Engineer
             </p>
           </div>
 

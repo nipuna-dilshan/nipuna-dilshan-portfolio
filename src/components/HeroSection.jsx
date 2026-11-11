@@ -10,7 +10,7 @@ export default function HeroSection() {
     >
       {/* Ambient Orange Background Glow */}
       <div
-        className="pointer-events-none absolute top-1/4 left-1/4 w-[500px] h-[300px] rounded-full bg-[#F47745] opacity-[0.11] blur-[130px]"
+        className="pointer-events-none absolute top-1/4 left-1/4 w-125 h-75 rounded-full bg-[#F47745] opacity-11 blur-[130px]"
         aria-hidden="true"
       />
 
@@ -22,7 +22,7 @@ export default function HeroSection() {
           <div className="lg:col-span-7 space-y-7 text-left">
             
             {/* Eyebrow Status Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-md bg-white/[0.03] border border-[#343434]">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-md bg-white/3 border border-[#343434]">
               <span
                 className="w-2 h-2 rounded-full bg-[#10B981] shadow-[0_0_8px_rgba(16,185,129,0.8)]"
                 aria-hidden="true"
@@ -60,7 +60,7 @@ export default function HeroSection() {
               {/* Secondary CTA */}
               <a
                 href="#contact"
-                className="px-7 py-4 rounded-xl bg-white/[0.04] hover:bg-white/[0.09] text-white border border-[#343434] hover:border-white/30 font-semibold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 transition-all active:scale-[0.98]"
+                className="px-7 py-4 rounded-xl bg-white/4 hover:bg-white/9 text-white border border-[#343434] hover:border-white/30 font-semibold text-sm sm:text-base inline-flex items-center justify-center gap-2.5 transition-all active:scale-[0.98]"
               >
                 <span>Let&apos;s Discuss a Project</span>
                 <ArrowUpRight className="w-4 h-4 text-[#F47745] stroke-[2.2]" aria-hidden="true" />

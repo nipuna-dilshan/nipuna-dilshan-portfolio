@@ -82,20 +82,14 @@ export default function Navbar() {
                         target.scrollIntoView({ behavior: 'smooth' });
                       }
                     }}
-                    className={`relative px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 flex flex-col items-center ${
+                    className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 inline-flex items-center ${
                       isActive
-                        ? 'text-white bg-white/[0.07]'
-                        : 'text-[#85878C] hover:text-white hover:bg-white/[0.03]'
+                        ? 'text-white bg-white/7'
+                        : 'text-[#85878C] hover:text-white hover:bg-white/3'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
                     <span>{item.label}</span>
-                    {isActive && (
-                      <span
-                        aria-hidden="true"
-                        className="absolute -bottom-1 w-1.5 h-1.5 rounded-full bg-[#F47745]"
-                      />
-                    )}
                   </a>
                 );
               })}
@@ -117,7 +111,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
-                className="p-1.5 text-white/90 rounded-lg hover:bg-white/[0.06] transition-colors focus:outline-none"
+                className="p-1.5 text-white/90 rounded-lg hover:bg-white/6 transition-colors focus:outline-none"
                 aria-expanded={mobileMenuOpen}
                 aria-label="Open Navigation Menu"
               >
@@ -156,7 +150,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-10 h-10 rounded-xl bg-white/[0.04] border border-[#2A2E35] flex items-center justify-center text-[#85878C] hover:text-white hover:bg-white/[0.08] transition-all focus:outline-none active:scale-95"
+                  className="w-10 h-10 rounded-xl bg-white/4 border border-[#2A2E35] flex items-center justify-center text-[#85878C] hover:text-white hover:bg-white/8 transition-all focus:outline-none active:scale-95"
                   aria-label="Close navigation menu"
                 >
                   <X className="w-5 h-5 stroke-[2.2]" aria-hidden="true" />
@@ -189,7 +183,7 @@ export default function Navbar() {
                         className={`w-full flex items-center justify-between px-4 py-3.5 rounded-xl transition-all duration-200 active:scale-[0.99] ${
                           isActive
                             ? 'bg-[#1E2227] text-white font-semibold shadow-[inset_0_1px_1px_rgba(255,255,255,0.06)]'
-                            : 'text-[#D0D3D9] hover:text-white hover:bg-white/[0.03] font-medium'
+                            : 'text-[#D0D3D9] hover:text-white hover:bg-white/3 font-medium'
                         }`}
                         aria-current={isActive ? 'page' : undefined}
                       >
