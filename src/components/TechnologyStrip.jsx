@@ -19,11 +19,11 @@ export default function TechnologyStrip() {
     >
       {/* Subtle edge fade overlays for high-end look */}
       <div
-        className="pointer-events-none absolute left-0 inset-y-0 w-16 sm:w-28 bg-gradient-to-r from-[#111315] to-transparent z-10"
+        className="pointer-events-none absolute left-0 inset-y-0 w-16 sm:w-28 bg-linear-to-r from-[#111315] to-transparent z-10"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute right-0 inset-y-0 w-16 sm:w-28 bg-gradient-to-l from-[#111315] to-transparent z-10"
+        className="pointer-events-none absolute right-0 inset-y-0 w-16 sm:w-28 bg-linear-to-l from-[#111315] to-transparent z-10"
         aria-hidden="true"
       />
 
