@@ -142,24 +142,24 @@ export default function TechStackSection() {
                 duration: prefersReducedMotion ? 0 : 0.18,
                 ease: EASE_OUT_EXPO,
               }}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4"
+              className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4"
             >
               {filteredTech.map((tech) => (
                 <div
                   key={tech.id}
-                  className="group rounded-2xl bg-white border border-[#E5E1D8] hover:border-[#F47745]/45 px-4 py-4 sm:px-5 sm:py-4.5 flex items-center gap-3.5 shadow-[0_4px_16px_rgba(17,19,21,0.03)] hover:shadow-[0_12px_28px_rgba(17,19,21,0.06)] hover:-translate-y-0.5 transition-all duration-200"
+                  className="group rounded-xl sm:rounded-2xl bg-white border border-[#E5E1D8] hover:border-[#F47745]/45 px-3 py-3 sm:px-5 sm:py-4.5 flex items-center gap-2.5 sm:gap-3.5 shadow-[0_4px_16px_rgba(17,19,21,0.03)] hover:shadow-[0_12px_28px_rgba(17,19,21,0.06)] hover:-translate-y-0.5 transition-all duration-200"
                 >
                   {/* Soft Warm Cream Container for Crisp Official Brand Logos */}
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#FAF8F5] border border-[#EAE6DD] group-hover:border-[#F47745]/40 flex items-center justify-center shrink-0 transition-colors duration-200">
+                  <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-[#FAF8F5] border border-[#EAE6DD] group-hover:border-[#F47745]/40 flex items-center justify-center shrink-0 transition-colors duration-200">
                     <TechBrandLogo id={tech.id} />
                   </div>
 
                   {/* Tech Title & Category */}
                   <div className="min-w-0">
-                    <h3 className="font-display font-bold text-[15px] sm:text-base text-[#111315] tracking-tight truncate">
+                    <h3 className="font-display font-bold text-[13px] sm:text-base text-[#111315] tracking-tight truncate">
                       {tech.name}
                     </h3>
-                    <p className="font-mono-tech text-[11px] sm:text-xs text-[#6D7076] mt-0.5">
+                    <p className="font-mono-tech text-[10px] sm:text-xs text-[#6D7076] mt-0.5 truncate">
                       {tech.subtitle}
                     </p>
                   </div>
