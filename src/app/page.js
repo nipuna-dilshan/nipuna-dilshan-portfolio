@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import TechnologyStrip from "@/components/TechnologyStrip";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import TechStackSection from "@/components/TechStackSection";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <TechnologyStrip />
         <CapabilitiesSection />
         <ProjectsSection />
+        <TechStackSection />
       </main>
     </div>
   );
