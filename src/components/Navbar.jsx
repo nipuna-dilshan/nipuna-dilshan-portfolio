@@ -34,34 +34,27 @@ export default function Navbar() {
 
   // Active section scroll spy
   useEffect(() => {
-    const sectionIds = NAV_ITEMS.map((item) => item.href.replace('#', ''));
-    const observers = [];
+    const handleScroll = () => {
+      const triggerOffset = window.innerHeight * 0.35;
+      let currentActive = 'Home';
 
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id);
-      if (!element) return;
+      for (const item of NAV_ITEMS) {
+        const id = item.href.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= triggerOffset) {
+            currentActive = item.label;
+          }
+        }
+      }
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const matched = NAV_ITEMS.find((item) => item.href === `#${id}`);
-              if (matched) {
-                setActiveItem(matched.label);
-              }
-            }
-          });
-        },
-        { rootMargin: '-40% 0px -45% 0px', threshold: 0 }
-      );
-
-      observer.observe(element);
-      observers.push(observer);
-    });
-
-    return () => {
-      observers.forEach((obs) => obs.disconnect());
+      setActiveItem(currentActive);
     };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const activeItemData = NAV_ITEMS.find((item) => item.label === activeItem) || NAV_ITEMS[0];

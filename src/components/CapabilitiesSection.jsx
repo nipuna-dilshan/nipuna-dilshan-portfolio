@@ -10,7 +10,6 @@ import {
   useSpring,
 } from 'framer-motion';
 import {
-  ArrowDown,
   BarChart2,
   Bot,
   Check,
@@ -18,7 +17,6 @@ import {
   Heart,
   Layers,
   Link2,
-  Mouse,
   Rocket,
   Settings,
   Share2,
@@ -128,7 +126,7 @@ export default function CapabilitiesSection() {
       <section
         id="capabilities"
         aria-labelledby="capabilities-heading"
-        className="relative py-24 sm:py-32 bg-editorial-grid-light text-[#111315] px-4 sm:px-6 lg:px-8 border-b border-[#E5E1D8] overflow-x-clip"
+        className="relative py-20 sm:py-28 bg-editorial-grid-light text-[#111315] px-4 sm:px-6 lg:px-8 border-b border-[#E5E1D8] overflow-x-clip"
       >
         <div className="max-w-6xl mx-auto w-full">
           {/* Section Header */}
@@ -366,25 +364,6 @@ export default function CapabilitiesSection() {
               })}
             </div>
           </div>
-
-          {/* Bottom Scroll Indicator */}
-          <motion.div
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={viewportConfig}
-            transition={{ duration: 0.55, delay: 0.15, ease: EASE_SILK }}
-            className="mt-16 sm:mt-20 flex items-center justify-center gap-5"
-          >
-            <span className="h-px w-16 sm:w-28 bg-[#DCD8CF]" aria-hidden="true" />
-            <div className="flex flex-col items-center gap-1.5 text-[#6D7076]">
-              <Mouse className="w-5 h-5 stroke-[1.7] text-[#111315]" aria-hidden="true" />
-              <span className="font-sans text-[11px] font-medium tracking-wide">
-                Scroll to explore
-              </span>
-              <ArrowDown className="w-3.5 h-3.5 text-[#6D7076]" aria-hidden="true" />
-            </div>
-            <span className="h-px w-16 sm:w-28 bg-[#DCD8CF]" aria-hidden="true" />
-          </motion.div>
         </div>
       </section>
     </MotionConfig>
