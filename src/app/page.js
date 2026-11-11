@@ -6,6 +6,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import TechStackSection from "@/components/TechStackSection";
 import ProcessSection from "@/components/ProcessSection";
 import AboutSection from "@/components/AboutSection";
+import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <TechStackSection />
         <ProcessSection />
         <AboutSection />
+        <ContactSection />
       </main>
     </div>
   );
