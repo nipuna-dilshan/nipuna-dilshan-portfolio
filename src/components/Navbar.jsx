@@ -3,17 +3,17 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 
+const NAV_ITEMS = [
+  { id: '01', label: 'Home', href: '#home' },
+  { id: '02', label: 'Capabilities', href: '#capabilities' },
+  { id: '03', label: 'Projects', href: '#projects' },
+  { id: '04', label: 'Process', href: '#process' },
+  { id: '05', label: 'About', href: '#about' },
+];
+
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState('Home');
-
-  const navItems = [
-    { id: '01', label: 'Home', href: '#home' },
-    { id: '02', label: 'About', href: '#about' },
-    { id: '03', label: 'Projects', href: '#projects' },
-    { id: '04', label: 'Articles', href: '#articles' },
-    { id: '05', label: 'Contact', href: '#contact' },
-  ];
 
   // Lock body scroll and listen for Escape key when mobile menu is open
   useEffect(() => {
@@ -32,7 +32,39 @@ export default function Navbar() {
     }
   }, [mobileMenuOpen]);
 
-  const activeItemData = navItems.find((item) => item.label === activeItem) || navItems[0];
+  // Active section scroll spy
+  useEffect(() => {
+    const sectionIds = NAV_ITEMS.map((item) => item.href.replace('#', ''));
+    const observers = [];
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id);
+      if (!element) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const matched = NAV_ITEMS.find((item) => item.href === `#${id}`);
+              if (matched) {
+                setActiveItem(matched.label);
+              }
+            }
+          });
+        },
+        { rootMargin: '-40% 0px -45% 0px', threshold: 0 }
+      );
+
+      observer.observe(element);
+      observers.push(observer);
+    });
+
+    return () => {
+      observers.forEach((obs) => obs.disconnect());
+    };
+  }, []);
+
+  const activeItemData = NAV_ITEMS.find((item) => item.label === activeItem) || NAV_ITEMS[0];
   const activeIndexDisplay = `${activeItemData.id} / 05`;
 
   const handleNavClick = (e, item) => {
@@ -55,7 +87,7 @@ export default function Navbar() {
             <a
               href="#home"
               className="flex items-center gap-0.5 group focus:outline-none"
-              onClick={() => setActiveItem('Home')}
+              onClick={(e) => handleNavClick(e, NAV_ITEMS[0])}
               aria-label="Nipuna Dilshan - Home"
             >
               <span className="font-display font-extrabold text-lg sm:text-xl tracking-tight text-white">
@@ -68,20 +100,13 @@ export default function Navbar() {
 
             {/* Center: Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-1" aria-label="Main Navigation">
-              {navItems.map((item) => {
+              {NAV_ITEMS.map((item) => {
                 const isActive = activeItem === item.label;
                 return (
                   <a
                     key={item.label}
                     href={item.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActiveItem(item.label);
-                      const target = document.querySelector(item.href);
-                      if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
+                    onClick={(e) => handleNavClick(e, item)}
                     className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-medium transition-all duration-150 inline-flex items-center ${
                       isActive
                         ? 'text-white bg-white/7'
@@ -99,6 +124,13 @@ export default function Navbar() {
             <div className="hidden md:flex items-center">
               <a
                 href="#contact"
+                onClick={(e) => {
+                  const target = document.querySelector('#contact');
+                  if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 className="px-4 py-2.5 rounded-xl bg-[#F47745] hover:bg-[#e26735] text-white font-semibold text-xs sm:text-sm shadow-[0_4px_16px_rgba(244,119,69,0.28)] inline-flex items-center gap-1.5 transition-all duration-150 active:scale-[0.98]"
               >
                 <span>Let&apos;s Talk</span>
@@ -137,7 +169,7 @@ export default function Navbar() {
               <div className="flex items-center justify-between pb-5 border-b border-[#262A30]">
                 <a
                   href="#home"
-                  onClick={(e) => handleNavClick(e, navItems[0])}
+                  onClick={(e) => handleNavClick(e, NAV_ITEMS[0])}
                   className="flex items-center gap-0.5 group focus:outline-none"
                 >
                   <span className="font-display font-extrabold text-2xl tracking-tight text-white">
@@ -169,7 +201,7 @@ export default function Navbar() {
 
               {/* Menu Items List with Staggered Cascading Animation */}
               <nav className="flex flex-col gap-2 my-2" aria-label="Mobile Menu Links">
-                {navItems.map((item, index) => {
+                {NAV_ITEMS.map((item, index) => {
                   const isActive = activeItem === item.label;
                   return (
                     <div
@@ -213,7 +245,7 @@ export default function Navbar() {
             {/* Bottom CTA: Let's Talk Button & Subtitle */}
             <div
               className="pt-6 border-t border-[#22252A] mt-8 animate-item-cascade"
-              style={{ animationDelay: `${100 + navItems.length * 55}ms` }}
+              style={{ animationDelay: `${100 + NAV_ITEMS.length * 55}ms` }}
             >
               <a
                 href="#contact"
