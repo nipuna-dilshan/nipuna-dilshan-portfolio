@@ -4,6 +4,7 @@ import TechnologyStrip from "@/components/TechnologyStrip";
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import TechStackSection from "@/components/TechStackSection";
+import ProcessSection from "@/components/ProcessSection";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <CapabilitiesSection />
         <ProjectsSection />
         <TechStackSection />
+        <ProcessSection />
       </main>
     </div>
   );
