@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import "./globals.css";
+import Preloader from "@/components/Preloader";
 
 export const metadata = {
   title: "Nipuna Dilshan — AI Solutions Engineer",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
         className="bg-[#111315] text-[#FFFFFF] antialiased selection:bg-[#F47745] selection:text-white font-sans min-h-screen"
       >
+        <Preloader />
         {children}
       </body>
     </html>
