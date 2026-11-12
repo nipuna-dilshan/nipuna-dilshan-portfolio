@@ -4,9 +4,6 @@ import "./globals.css";
 export const metadata = {
   title: "Nipuna Dilshan — AI Solutions Engineer",
   description: "Personal portfolio of Nipuna Dilshan, AI Solutions Engineer building practical AI & automated software systems.",
-  icons: {
-    icon: "/favicon.svg",
-  },
 };
 
 export default function RootLayout({ children }) {
