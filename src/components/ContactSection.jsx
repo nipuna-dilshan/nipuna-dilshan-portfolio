@@ -141,17 +141,17 @@ export default function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewportConfig}
               transition={{ duration: 0.55, delay: 0.05, ease: EASE_OUT_EXPO }}
-              className="group relative rounded-2xl bg-[#14171A] border border-[#F47745]/45 hover:border-[#F47745] p-6 sm:p-7 flex flex-col justify-between overflow-hidden shadow-[0_18px_44px_-16px_rgba(244,119,69,0.2)] transition-all duration-200 hover:-translate-y-0.5"
+              className="group relative rounded-2xl bg-[#14171A] border border-[#262930] hover:border-[#F47745]/60 p-6 sm:p-7 flex flex-col justify-between overflow-hidden shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:shadow-[0_18px_44px_-16px_rgba(244,119,69,0.22)] transition-all duration-200 hover:-translate-y-0.5"
             >
-              {/* Top Orange Rim */}
+              {/* Top Orange Rim (appears on hover) */}
               <div
-                className="pointer-events-none absolute top-0 left-6 right-6 h-[1.5px] bg-linear-to-r from-transparent via-[#F47745] to-transparent opacity-85"
+                className="pointer-events-none absolute top-0 left-6 right-6 h-[1.5px] bg-linear-to-r from-transparent via-[#F47745] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 aria-hidden="true"
               />
 
               <div>
                 <div className="flex items-center justify-between gap-3 mb-5">
-                  <span className="font-mono-tech text-[11px] tracking-[0.16em] uppercase text-[#F47745] font-semibold">
+                  <span className="font-mono-tech text-[11px] tracking-[0.16em] uppercase text-[#85878C] group-hover:text-[#F47745] font-semibold transition-colors">
                     Primary Channel
                   </span>
                   <MessageCircle
@@ -177,10 +177,10 @@ export default function ContactSection() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-5 rounded-xl bg-[#F47745] hover:bg-[#e26735] text-white font-mono-tech text-xs font-semibold tracking-[0.14em] uppercase inline-flex items-center justify-center gap-2 shadow-[0_8px_24px_rgba(244,119,69,0.28)] transition-all active:scale-[0.98]"
+                className="w-full py-3.5 px-4 rounded-xl bg-[#1C2026] hover:bg-[#232830] border border-[#2C313A] hover:border-[#3E4552] text-white font-mono-tech text-xs font-semibold tracking-[0.14em] uppercase inline-flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
               >
                 <span>Start Chat</span>
-                <ArrowUpRight className="w-4 h-4 stroke-[2.2]" aria-hidden="true" />
+                <ArrowUpRight className="w-4 h-4 text-[#F47745] stroke-[2.2]" aria-hidden="true" />
               </a>
             </motion.article>
 
@@ -190,11 +190,17 @@ export default function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewportConfig}
               transition={{ duration: 0.55, delay: 0.12, ease: EASE_OUT_EXPO }}
-              className="group relative rounded-2xl bg-[#14171A] border border-[#262930] hover:border-[#F47745]/50 p-6 sm:p-7 flex flex-col justify-between shadow-[0_12px_32px_rgba(0,0,0,0.35)] transition-all duration-200 hover:-translate-y-0.5"
+              className="group relative rounded-2xl bg-[#14171A] border border-[#262930] hover:border-[#F47745]/60 p-6 sm:p-7 flex flex-col justify-between overflow-hidden shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:shadow-[0_18px_44px_-16px_rgba(244,119,69,0.22)] transition-all duration-200 hover:-translate-y-0.5"
             >
+              {/* Top Orange Rim (appears on hover) */}
+              <div
+                className="pointer-events-none absolute top-0 left-6 right-6 h-[1.5px] bg-linear-to-r from-transparent via-[#F47745] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                aria-hidden="true"
+              />
+
               <div>
                 <div className="flex items-center justify-between gap-3 mb-5">
-                  <span className="font-mono-tech text-[11px] tracking-[0.16em] uppercase text-[#85878C] font-semibold">
+                  <span className="font-mono-tech text-[11px] tracking-[0.16em] uppercase text-[#85878C] group-hover:text-[#F47745] font-semibold transition-colors">
                     Direct Inquiries
                   </span>
                   <Mail
@@ -251,11 +257,17 @@ export default function ContactSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewportConfig}
               transition={{ duration: 0.55, delay: 0.19, ease: EASE_OUT_EXPO }}
-              className="group relative rounded-2xl bg-[#14171A] border border-[#262930] hover:border-[#F47745]/50 p-6 sm:p-7 flex flex-col justify-between shadow-[0_12px_32px_rgba(0,0,0,0.35)] transition-all duration-200 hover:-translate-y-0.5"
+              className="group relative rounded-2xl bg-[#14171A] border border-[#262930] hover:border-[#F47745]/60 p-6 sm:p-7 flex flex-col justify-between overflow-hidden shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:shadow-[0_18px_44px_-16px_rgba(244,119,69,0.22)] transition-all duration-200 hover:-translate-y-0.5"
             >
+              {/* Top Orange Rim (appears on hover) */}
+              <div
+                className="pointer-events-none absolute top-0 left-6 right-6 h-[1.5px] bg-linear-to-r from-transparent via-[#F47745] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                aria-hidden="true"
+              />
+
               <div>
                 <div className="flex items-center justify-between gap-3 mb-5">
-                  <span className="font-mono-tech text-[11px] tracking-[0.16em] uppercase text-[#85878C] font-semibold">
+                  <span className="font-mono-tech text-[11px] tracking-[0.16em] uppercase text-[#85878C] group-hover:text-[#F47745] font-semibold transition-colors">
                     Professional Network
                   </span>
                   <LinkedInMark className="w-4.5 h-4.5 text-[#F47745]" />
